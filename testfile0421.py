@@ -9,6 +9,12 @@ import random
 import time 
 import threading 
 
+def __str__(self):
+        string=""
+        string+="X Coordinate: " + str(self.xcor) + "\n"
+        string+="Y Coordinate: " + str(self.ycor) + "\n"
+return string
+
 def main(): 
 	#BulletClass() 
 	#ControllerClass()
@@ -23,6 +29,7 @@ def main():
 	P = PlayerClass.Player(5,5)
 	P.movement(10,10)
 	print(P.death(Z1))
+	Zombie.__str___(Zombie) #is this the right formatting? Also aren't we supposed to avoid str functions?  
 	
 	Z2 = ZombieClass.Zombies(11,11)
 	#print(Z2)
