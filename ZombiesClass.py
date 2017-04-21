@@ -21,9 +21,5 @@ class Zombies:
         self.movement(xvar,yvar)
 
     def death(self,bullet):
-        if self.xcor==bullet.xcor and self.ycor==bullet.ycor:
-            return("Zombie's Dead")
-        """return self.rect.colliderect(sprite.rect)"""
-        else:
-            return("Alive!")
-        
+        if self.rect.colliderect(bullet.rect):
+            del zombie
