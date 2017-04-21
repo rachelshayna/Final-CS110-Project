@@ -1,22 +1,37 @@
-import time
-import random
 import pygame
-import threading
 
 class Bullet:
-    def __init__(self,xcor,ycor):
-        self.xcor=xcor
-        self.ycor=ycor
+    def __init__(self):
+        self.image=pygame.Surface([4, 10])
+        self.image.fill(BLACK)
+        self.rect = self.image.get_rect()
+        self.rect.x=player.rect.x
+        self.rect.y=player.rect.y
 
-    def movement(self,xcor,ycor):
-        self.xcor=xcor
-        self.ycor=ycor
-  #      send in a direction, not an x and y coordinate. Moving one or two pixel at a time.
-  #pass in parameter direction so it moves in that direction forever until it hits something or leaves the screen. DOn't need the x and y coor because you just need the initial direction
-#loop
-    def hit(self,bullet,zombie):
-        if bullet.xcor==zombie.xcor:
-            return("delete zombie")
+    def ammo(self):
+        bullet_list=pygame.sprite.Group()
+        if kill == False:
+            bullet_list-=1
+        elif kill==True:
+            bullet_list.add(bullet)
+        return bullet_list
+
+    def shoot(self,bullet,zombie):
+        for event in pygame.event.get():
+            if event.type==pygame.KEYDOWN:
+                if event.key==pygame.K_UP:
+                    bullet.forward(5)
+
+    def hit (self,zombie):
+        for bullet in bullet_list:
+            killedzombies=pygame.sprite.spritecollide(bullet, zombie, True)
+            for zombie in killedzombies:
+                bullet_list.remove(bullet)
+        return self.rect.colliderect(zombie.rect)
+
+    def kill(self,zombie):
+        if hit==True:
+            del zombie
+            del bullet
         else:
-            return("delete bullet")
-        """ return self.rect.colliderect(sprite.rect)"""
+            del bullet
