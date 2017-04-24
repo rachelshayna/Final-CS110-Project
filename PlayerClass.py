@@ -5,21 +5,20 @@ class Player(pygame.sprite.Sprite):
         self.image=''
         self.score=0
         self.change_x=0
-        self.change_y=0
 
     def __str__(self):
         string=""
         string+="X Coordinate: "+str(self.xcor)+"\n"
-        string+="Y Coordinate: "+str(self.ycor)+"\n"
         return string
 
-    def changespeed(self,x,y):
-        self.change_x+=x
+    def move(self,x):
+        if k_down = left:
+            self.change_x-=x
+        elif k_down = right:
+            self.change_x +=x
         
-
-    def update(self,x,y):
+    def update(self,x):
         self.rect.x+=self.change_x
-        self.rect.y+=self.change_y
 
     def collision(self,zombie):
         return self.rect.colliderect(zombie.rect)
