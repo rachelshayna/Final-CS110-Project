@@ -26,10 +26,11 @@ class Bullet:
         update(self)
 
     def hit (self,zombie):
-        for bullet in bullet_list:
-            killedzombies=pygame.sprite.spritecollide(bullet, zombie, True)
-            for zombie in killedzombies:
-                bullet_list.remove(bullet)
+        if shoot==True:
+            for bullet in bullet_list:
+                killedzombies=pygame.sprite.spritecollide(bullet, zombie, True)
+                for zombie in killedzombies:
+                    bullet_list.remove(bullet)
         return self.rect.colliderect(zombie.rect)
 
     def kill(self,zombie):
