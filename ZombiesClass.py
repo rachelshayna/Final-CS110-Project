@@ -46,4 +46,4 @@ class Zombies:
 #zombie dies
     def death(self,bullet):
         if self.rect.colliderect(bullet.rect):
-            zombies.remove()
+            zombies_group.remove()
