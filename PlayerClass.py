@@ -5,26 +5,22 @@ class Player(pygame.sprite.Sprite):
         self.image=''
         self.score=0
         self.change_x=0
+        self.change_y=0
 
-    def __str__(self):
-        string=""
-        string+="X Coordinate: "+str(self.xcor)+"\n"
-        return string
+#move player
+    def changespeed(self,x):
+        self.change_x+=x
 
-    def move(self,x):
-        if k_down = left:
-            self.change_x-=x
-        elif k_down = right:
-            self.change_x +=x
-        
     def update(self,x):
         self.rect.x+=self.change_x
 
+#see if player touches zombie
     def collision(self,zombie):
         return self.rect.colliderect(zombie.rect)
 
+#player death
     def death(self,zombie):
-        if self.colliderect(zombie):
+        if collision==True:
             del self
             return True
         elif Bullet.ammo ==0:
@@ -32,6 +28,3 @@ class Player(pygame.sprite.Sprite):
             return True
         else:
             return False
-
-        """if collision == True:
-                del player"""
