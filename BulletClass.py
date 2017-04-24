@@ -2,31 +2,29 @@ import pygame
 
 class Bullet:
     def __init__(self):
-        self.image=pygame.Surface([4, 10])     #look at player class init and use the same format, no call to a view (recntangle)
-        self.image.fill(BLACK)                  #that is all frontend
-        self.rect = self.image.get_rect()
-        self.rect.x=player.rect.x
-        self.rect.y=player.rect.y
+        self.image=''
+        self.change_x=0
+        self.change_y=0
 
-    def update(self):
-        #code to update state
-    
-    #ammo function is good
+    def changespeed(self,x):
+        self.change_x+=x
+
+    def update(self,x):
+        self.rect.x+=self.change_x
+
     def ammo(self):
-        bullet_list=pygame.sprite.Group()  
-        if kill == False:
-            bullet_list-=1
-        elif kill==True:
-            bullet_list.add(bullet)
+        bullet_list=pygame.sprite.Group()
+        if shoot==True:
+            if kill==True:
+                bullet_list.add(bullet)
+            else:
+                bullet_list-=1
         return bullet_list
 
-    def shoot(self,bullet,zombie):
-        for event in pygame.event.get():                #no user input neccesary
-            if event.type = True                        #look at player class as example to structure this code
-                update(self)
-                if event.key= False
-                    bullet.forward(5)
-#Here down is good
+    def shoot(self,bullet):
+        bullet.forward(5)
+        update(self)
+
     def hit (self,zombie):
         for bullet in bullet_list:
             killedzombies=pygame.sprite.spritecollide(bullet, zombie, True)
