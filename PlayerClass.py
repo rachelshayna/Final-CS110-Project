@@ -15,8 +15,20 @@ class Player(pygame.sprite.Sprite):
         self.rect.x+=self.change_x
 
 #find what direction player is facing
-    def direction(self,x,y):
-        
+    def direction(self, keypress):
+        if keypress == pygame.k_LEFT:
+            if self.direction = 'left':
+                return self.direction
+            if self.direction = 'right':
+                self.direction = 'left'
+                return self.direction
+        if keypress == pygame.k_RIGHT:
+            if self.direction = 'right'
+                return self.direction
+            if self.direction = 'left'
+                self.direction = 'right'
+                return self.direction
+                
 
 #end game
     def death(self,zombie):
@@ -26,5 +38,7 @@ class Player(pygame.sprite.Sprite):
             return True
         else:
             return False
+        
+      
 
 #find player direction; boolean value; check BV for player and set BV of the bullet ; then check bullets fired in event loop; if not empty, keep moving in whatever direction its facing; removed only if it one-hits a zombie or is outside window 
