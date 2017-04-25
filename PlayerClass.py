@@ -26,9 +26,9 @@ class Player(pygame.sprite.Sprite):
                 self.direction = 'left'
                 return False
         if keypress == pygame.K_RIGHT:
-            if self.direction == 'right'
+            if self.direction == 'right':
                 return True
-            if self.direction == 'left'
+            if self.direction == 'left':
                 self.direction = 'right'
                 return False
 
