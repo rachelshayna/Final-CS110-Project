@@ -14,17 +14,17 @@ class Player(pygame.sprite.Sprite):
     def update(self,x):
         self.rect.x+=self.change_x
 
-#see if player touches zombie
-    def collision(self,zombie):
-        return self.rect.colliderect(zombie.rect)
+#find what direction player is facing
+    def direction(self,x,y):
+        
 
-#player death
+#end game
     def death(self,zombie):
-        if collision==True:
-            del self
+        if self.rect.colliderect(zombie.rect):
             return True
         elif Bullet.ammo ==0:
-            del self
             return True
         else:
             return False
+
+#find player direction; boolean value; check BV for player and set BV of the bullet ; then check bullets fired in event loop; if not empty, keep moving in whatever direction its facing; removed only if it one-hits a zombie or is outside window 
