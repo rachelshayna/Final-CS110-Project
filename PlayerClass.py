@@ -2,10 +2,6 @@ import pygame
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
-        self.image=''
-        self.score=0
-        self.change_x=0
-        self.change_y=0
         self.direction = 'left'
             
     def move(self, keypress):             
@@ -21,7 +17,10 @@ class Player(pygame.sprite.Sprite):
             if self.direction == 'left':
                 self.direction = 'right'
                 return False
-
+            
+    def direction(self):
+        return(self.direction)
+    
 #end game
     def death(self,zombie):
         if self.rect.colliderect(zombie.rect):
