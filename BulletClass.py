@@ -16,7 +16,7 @@ class Bullet:
         self.rect.x+=self.change_x
         for zombies in killed_zombies:
             zombie.death()
-        if bullet.x > <ScreenSizeRight> or bullet.x < <ScreenSizeLeft>:
+        if bullet.x > <ScreenSizeRight> or bullet.x < <ScreenSizeLeft>: #this is invalid syntax
             bullet.remove(bullet)
 
     def ammo(self):
