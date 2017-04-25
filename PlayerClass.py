@@ -7,17 +7,7 @@ class Player(pygame.sprite.Sprite):
         self.change_x=0
         self.change_y=0
         self.direction = 'left'
-
-#move player
-    #def changespeed(self,x):
-        #self.change_x+=x
-
-    #def update(self,x):
-        #self.rect.x+=self.change_x
-
-#find what direction player is facing
             
-         
     def move(self, keypress):             
         if keypress == pygame.K_LEFT:
             if self.direction == 'left':
