@@ -13,7 +13,7 @@ def __str__(self):
         string=""
         string+="X Coordinate: " + str(self.xcor) + "\n"
         string+="Y Coordinate: " + str(self.ycor) + "\n"
-return string
+	return string
 
 def main(): 
 	
