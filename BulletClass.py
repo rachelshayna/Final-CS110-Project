@@ -5,15 +5,21 @@ class Bullet:
         self.image=''
         self.change_x=0
         self.change_y=0
+        bullet_list=pygame.sprite.Group()
+        killed_zombies=[zombie for zombie in zombies if bullet.kill()==True]
+        #OR: killed_zombies=pygame.sprite.spritecollide(bullet, zombie, True)
 
     def changespeed(self,x):
         self.change_x+=x
 
     def update(self,x):
         self.rect.x+=self.change_x
+        for zombies in killed_zombies:
+            zombie.death()
+        if bullet.x > <ScreenSizeRight> or bullet.x < <ScreenSizeLeft>:
+            bullet.remove(bullet)
 
     def ammo(self):
-        bullet_list=pygame.sprite.Group()
         if shoot==True:
             if kill==True:
                 bullet_list.add(bullet)
@@ -21,21 +27,30 @@ class Bullet:
                 bullet_list-=1
         return bullet_list
 
+    def direction(self,bullet):
+        return fdf dd
+        
     def shoot(self,bullet):
         bullet.forward(5)
         update(self)
+        return True
 
-    def hit (self,zombie):
-        if shoot==True:
+    """def hit (self,zombie):
+        if bullet.shoot()==True:
             for bullet in bullet_list:
-                killedzombies=pygame.sprite.spritecollide(bullet, zombie, True)
                 for zombie in killedzombies:
                     bullet_list.remove(bullet)
-        return self.rect.colliderect(zombie.rect)
+        return self.rect.colliderect(zombie.rect)"""
 
     def kill(self,zombie):
-        if hit==True:
-            del zombie
-            del bullet
-        else:
-            del bullet
+        if bullet.shoot()==True:
+            for bullet in bullet_list:
+                if self.rect.colliderect(zombie.rect)==True:
+                    del bullet
+                    bullet_list.add(bullet)
+                else:
+                    del bullet
+                    bulletlist.remove(bullet)
+
+#find bullet direction
+
