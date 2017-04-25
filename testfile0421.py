@@ -3,7 +3,7 @@ import ControllerClass
 import PlayerClass
 import ScoreClass
 import SpriteClass
-import Zombies Class 
+import ZombiesClass 
 import pygame
 import random 
 import time 
