@@ -6,29 +6,31 @@ class Player(pygame.sprite.Sprite):
         self.score=0
         self.change_x=0
         self.change_y=0
+        self.direction = 'left'
 
 #move player
-    def changespeed(self,x):
-        self.change_x+=x
+    #def changespeed(self,x):
+        #self.change_x+=x
 
-    def update(self,x):
-        self.rect.x+=self.change_x
+    #def update(self,x):
+        #self.rect.x+=self.change_x
 
 #find what direction player is facing
-    def direction(self, keypress):
+            
+         
+    def move(self, keypress):             
         if keypress == pygame.K_LEFT:
             if self.direction == 'left':
-                return self.direction
+                return True
             if self.direction == 'right':
                 self.direction = 'left'
-                return self.direction
+                return False
         if keypress == pygame.K_RIGHT:
             if self.direction == 'right'
-                return self.direction
+                return True
             if self.direction == 'left'
                 self.direction = 'right'
-                return self.direction
-                
+                return False
 
 #end game
     def death(self,zombie):
