@@ -1,10 +1,9 @@
-import BulletClass
-import ControllerClass
+#import BulletClass '''there's an edit in the file that needs to be addressed'''
+#import ControllerClass
 import PlayerClass
 import ScoreClass
 import SpriteClass
 import ZombiesClass 
-import pygame
 import random 
 import time 
 import threading 
