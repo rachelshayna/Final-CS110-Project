@@ -16,16 +16,16 @@ class Player(pygame.sprite.Sprite):
 
 #find what direction player is facing
     def direction(self, keypress):
-        if keypress == pygame.k_LEFT:
-            if self.direction = 'left':
+        if keypress == pygame.K_LEFT:
+            if self.direction == 'left':
                 return self.direction
-            if self.direction = 'right':
+            if self.direction == 'right':
                 self.direction = 'left'
                 return self.direction
-        if keypress == pygame.k_RIGHT:
-            if self.direction = 'right'
+        if keypress == pygame.K_RIGHT:
+            if self.direction == 'right'
                 return self.direction
-            if self.direction = 'left'
+            if self.direction == 'left'
                 self.direction = 'right'
                 return self.direction
                 
