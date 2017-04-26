@@ -1,10 +1,11 @@
 import pygame
 
-class Player(pygame.sprite.Sprite):
+class PlayerClass():
     def __init__(self):
         self.direction = 'left'
-            
-    def move(self, keypress):             
+
+
+    def move(self, keypress):
         if keypress == pygame.K_LEFT:
             if self.direction == 'left':
                 return True
@@ -17,10 +18,19 @@ class Player(pygame.sprite.Sprite):
             if self.direction == 'left':
                 self.direction = 'right'
                 return False
-            
+    def moveLimit(self, keypress, player):
+        if keypress == pygame.K_LEFT:
+            if player.rect.x >= 100:
+                return True
+            else:
+                return False
+        elif keypress == pygame.K_RIGHT:
+            if player.rect.x <= 1400:
+                return True
+            else:
+                return False
     def direction(self):
         return(self.direction)
-    
 #end game
     def death(self,zombie):
         if self.rect.colliderect(zombie.rect):
@@ -29,6 +39,7 @@ class Player(pygame.sprite.Sprite):
             return True
         else:
             return False
+
         
       
 
