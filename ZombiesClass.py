@@ -15,9 +15,9 @@ class Zombie:
         zombie.rect.x -= zombie.rect.width
 
 #spawn zombie left
-    def spawnLeft(self):
-        zombie_group.append(Zombie,<ScreenSizeLeft>) #might need to append tuple
-        update()
+    #def spawnLeft(self):
+        #zombie_group.append(Zombie,<ScreenSizeLeft>) #might need to append tuple
+        #update()
 
 #spawn zombie right
     #def spawnRight(self):
