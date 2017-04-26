@@ -14,6 +14,13 @@ class Zombie:
     def leftmovement(self):
         zombie.rect.x -= zombie.rect.width
 
+    def spawn:
+        if clock.tick(gametime) == clock.tick(time):
+            if random.randchoice(2) == 0:
+                self.spawnLeft()
+            elif random.randchoice(2) == 1:
+                self.spawnRight()
+                      
 #spawn zombie left
     def spawnLeft(self):
         zombie_group.append(Zombie,<ScreenSizeLeft>) #might need to append tuple
