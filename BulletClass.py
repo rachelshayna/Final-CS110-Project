@@ -34,7 +34,7 @@ class Bullet:
                 zombie.changespeed(3,0)
         
     def shoot(self):
-        bullet.forward(5)
+        bullet.forward(100)
         update(self)
         return True
 
