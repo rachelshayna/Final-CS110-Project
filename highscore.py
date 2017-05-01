@@ -8,5 +8,5 @@ def highscore(score):
     outfile.write(str(old_hi))
     return old_hi
   outfile.write(str(score))
-  outfile.close()
   return score
+  outfile.close()
