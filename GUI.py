@@ -1,11 +1,12 @@
-import pygame                                                                       #Henry Chen
+import pygame
+import tkinter                                                                    #Henry Chen
 import sys
 import random                                                                   # Q: Why can't you take an atom seriously?
 from PlayerClass import PlayerClass                                             # A: Because they make up everything!
-import view_Background
 from view_Player import view_Player
 from Zombie import Zombie
 from Bullet import Bullet
+
 
 pygame.init()
 BLACK = (0, 0, 0)
@@ -72,16 +73,16 @@ while not done:
                             bullet.rect.y = (player_sprite.rect.y + 33)             # Bullet y pos = player y pos + 33 px to line it up to the gun
                             all_sprites_list.add(bullet)                            # Add the bullet sprite to sprite list
                             bullet_list.add(bullet)                                 # Add bullet to bullet list
+                            bullet_count -= 1
                         elif player.direction == 'right':
                             bullet = Bullet('right')                                # Creates a bullet
                             bullet.rect.x = (player_sprite.rect.x + 80)             # Bullet x pos = player x pos + 80 px to line it up to the gun
                             bullet.rect.y = (player_sprite.rect.y + 33)             # Bullet y pos = player y pos + 33 px to line it up to the gun
                             all_sprites_list.add(bullet)                            # Add the bullet sprite to sprite list
                             bullet_list.add(bullet)                                 # Add bullet to bullet list
-                    elif bullet_count == 0:
-                        game_over == True
-                elif event.key == pygame.K_DOWN:
-                    game_over = True
+                            bullet_count -= 1
+        elif bullet_count == 0:
+            game_over == True
 
 
         if frame_count % spawn_rate == 0:
@@ -99,11 +100,13 @@ while not done:
         if game_over == True:
             done = True
 
+
     # --- On Screen Text ---
 
     score_font = pygame.font.SysFont('Calibri', 30, True, False)
     font = pygame.font.SysFont('Calibri', 150, True, False)
     score_text = score_font.render("Score: " + str(score), True, (255,255,255))
+    bullet_text = score_font.render("Bullet: " + str(bullet_count), True, (255,255,255))
 
 
     # --- Game Logic ---
@@ -112,6 +115,7 @@ while not done:
 
     screen.blit(background_image,[0,0])
     screen.blit(score_text, [30, 50])
+    screen.blit(bullet_text, [1400, 50])
 
     all_sprites_list.draw(screen)
 
@@ -124,6 +128,7 @@ while not done:
             bullet_list.remove(bullet)
             all_sprites_list.remove(bullet)
             score += 100
+            bullet_count += 2
 
         if bullet.rect.x < 0 or bullet.rect.x > 1600:
             bullet_list.remove(bullet)
