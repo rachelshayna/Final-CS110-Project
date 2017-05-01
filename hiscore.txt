@@ -1,0 +1,6 @@
+old_hi = x
+  if score < x:
+    x = new_high
+  else:
+    x = score
+   
