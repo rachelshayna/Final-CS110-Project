@@ -1,3 +1,4 @@
+#Lauren Birck
 def highscore(score):
   infile = open("hiscore.txt", "r")
   old_hi = int(infile.readline())
