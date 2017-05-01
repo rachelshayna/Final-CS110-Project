@@ -10,8 +10,10 @@ class view_Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+
     def direction(self, player):
         if player.direction == 'left':
             self.image = pygame.image.load("player_left.png").convert_alpha()
         elif player.direction == 'right':
             self.image = pygame.image.load("player_right.png").convert_alpha()
+
